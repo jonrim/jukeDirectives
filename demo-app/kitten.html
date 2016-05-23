@@ -1,0 +1,18 @@
+<div ng-show="isFluffy">I AM FLUFFY</div>
+<div ng-click="akitten.showDetails = !akitten.showDetails">
+  {{ akitten.name }}: {{ akitten.project }}
+</div>
+<div>
+  Should show? {{ akitten.showDetails }}
+</div>
+<div ng-show="akitten.showDetails">
+  <div>$ {{ akitten.raised }} / {{ akitten.target }}</div>
+  <img src="{{ akitten.photo }}">
+  <div>{{ akitten.description }}</div>
+  <!-- update raised -->
+
+  <button ng-click="feed()">
+    Add ${{ user.info.amount }}
+  </button>
+</div>
+<hr>
