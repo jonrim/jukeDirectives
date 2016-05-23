@@ -22,3 +22,16 @@ juke.directive('currentSong', function() {
 		template: '<h5> {{ getCurrentSong().name }} </h5>',
 	}
 })
+
+juke.directive('progressBar', function(PlayerFactory) {
+	return {
+		restrict: 'A',
+		link: function(scope, element, attrs) {
+			element.on('click', function(event) {
+		    var percentDone = event.offsetX/event.target.offsetWidth;
+		    angular.extend(scope, PlayerFactory);
+		    scope.getAudio().currentTime = scope.getAudio().duration * percentDone;
+		  })
+		}
+	}
+})

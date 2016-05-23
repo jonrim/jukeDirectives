@@ -64,6 +64,9 @@ juke.factory('PlayerFactory', function ($rootScope) {
     return progress;
   };
 
+  player.getAudio = function() {
+    return audio;
+  };
   // audio event listening
 
   audio.addEventListener('ended', function () {
